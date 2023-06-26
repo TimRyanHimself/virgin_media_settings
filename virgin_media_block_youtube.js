@@ -12,6 +12,7 @@ const sites = [
 ];
 
 // Click on Websites tab
+console.log("Clicking on Websites tab");
 var elements = document.getElementsByTagName(tag);
 var found = [];
 for (var i = 0; i < elements.length; i++) {
@@ -21,22 +22,21 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 // Find the elements needed
+console.log("Finding elements");
 let container = document.getElementById('blockedSiteContainer');
-console.log(container.id);
 let box = container.querySelector('.addsiteinputbox');
-console.log(box.id);
 let btn_block_site = document.getElementById('blockedSites')
-console.log(btn_block_site.id);
 let btn_apply = document.querySelector('.applyButton');
-console.log(btn_apply.id);
 
 // Call the function for each site to block
 sites.forEach(block_site);
 
 // Click Apply
+console.log("Clicking Apply");
 btn_apply.click();
 
 function block_site(site) {
+    console.log("Adding " + site);
     box.value = site;
     btn_block_site.click();
 }
